@@ -23,11 +23,14 @@ Traveller.prototype.getJourneysByMinDistance = function (minDistance) {
 };
 
 Traveller.prototype.calculateTotalDistanceTravelled = function () {
-
+  // map the journeys to create an array of distances
+  const distances = this.journeys.map(function(location){return location.distance});
+  // reduce the array to a total distance
+  return distances.reduce((total,n)=>total + n);
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
-
+  
 };
 
 
